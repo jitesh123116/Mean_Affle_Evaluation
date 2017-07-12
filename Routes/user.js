@@ -18,12 +18,19 @@ var upload=multer({storage: store});
 //This is a update API for updating the user information.
 router.post('/update',upload.any(),function(req,res){
 	var photo=req.files;
-	var pic=photo[0].originalname;
-	var userdata=req.body;
-	userdata.image=pic;
-	userservice.update(userdata,(data) => {
-		res.send(data);
-	})
+	if(photo.length != 0) {
+		var pic=photo[0].originalname;
+	    var userdata=req.body;
+	    userdata.image=pic;
+	    userservice.update(userdata,(data) => {
+		    res.send(data);
+	    })
+	}
+	else {
+		userservice.update(req.body,(data) => {
+		    res.send(data);
+	    })
+	}
 })
 
 module.exports = router;

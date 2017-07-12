@@ -1,5 +1,5 @@
-var usermodel=require('../Model/usermodel');
-
+var usermodel=require('../Model/customer');
+var model =usermodel.model;
 //Update function for updating the user record.
 var update= (body, callback) => {
 	var fname = body.fname;
@@ -29,7 +29,9 @@ var update= (body, callback) => {
     }
 
 	//Find the user Info
-	usermodel.model.find({"email" : email}, function(err, data) {
+	console.log(email);
+	model.find({"email" : email}, function(err, data) {
+		console.log(data);
 		if(err)
 			callback(err);
 
