@@ -62,7 +62,7 @@ var update= (body, callback) => {
 		}
 
 		//Query to update the user record
-		usermodel.model.update({"email" : email}, {$set : {"firstname" : fname, "lastname" : lname, "email" : newcd ..email, "mobile" : mobile, "image" : image}}, (err,details) => {
+		usermodel.model.update({"email" : email}, {$set : {"firstname" : fname, "lastname" : lname, "email" : newemail, "mobile" : mobile, "image" : image}}, (err,details) => {
 		    	if(err)
 		    		callback(err);
 		    	else

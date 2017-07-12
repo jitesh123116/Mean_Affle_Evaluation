@@ -1,9 +1,6 @@
 var url='mongodb://192.168.2.223:27017/customer';
 var userschema=require('./customer');
 
-//Schema for user
-var customerschema=userschema.
-
 //model for user data
 var model=userschema.model;
 
