@@ -1,5 +1,5 @@
 var crypto= require('crypto');
-var providerModel= require('../Model/provider');
+var providerModel= require('../Model/customer');
 var unique_key_for_login= "abcde12345123456";
 
 /* this function is used for login customer by email/mobile and password */
@@ -16,7 +16,7 @@ var login = (data, callback) => {
 
         // query to find the user with email/mobile and password
 
-        providerModel.userModel.findOne({$or : [{"email" : data.email, "password": data.password} ,
+        providerModel.model.findOne({$or : [{"email" : data.email, "password": data.password} ,
          {"mobile": data.mobile, "password" :data.password}]}, (err, info) => {
             if(err){
                 callback(err)
