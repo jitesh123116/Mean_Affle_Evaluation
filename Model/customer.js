@@ -27,7 +27,7 @@ let schem = new schema({
 database connectivity 
 database name- customer
 */
-mongoose.connect ( "mongodb://localhost:27017/customer", function ( err){
+mongoose.connect ( "mongodb://127.0.0.1:27017/customer", function ( err){
             if (err) 
             {
               console.log ( err)
