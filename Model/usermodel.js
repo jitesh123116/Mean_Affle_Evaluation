@@ -4,14 +4,6 @@ var userschema=require('./customer');
 //model for user data
 var model=userschema.model;
 
-//mongodb connection 
-mongo.connect(url,function(err){
-	if(err)
-		console.log(err);
-	else
-		console.log("connected");
-})
-
 //exports model
 module.exports= {
 	model: model
